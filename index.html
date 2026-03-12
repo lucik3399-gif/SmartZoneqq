@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartZone — смартфони та аксесуари</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand">SmartZone</div>
+      <nav>
+        <a href="#catalog">Каталог</a>
+        <a href="#advantages">Переваги</a>
+        <a href="#contacts">Контакти</a>
+      </nav>
+      <button class="cart-btn" id="openCartBtn">Кошик <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="pill">GitHub-версія SmartZone</div>
+        <h1>Готовий сайт магазину для запуску через GitHub Pages</h1>
+        <p>
+          Красивий адаптивний магазин смартфонів і аксесуарів. Працює без сервера:
+          просто завантаж файли в GitHub і відкрий сайт онлайн.
+        </p>
+        <div class="hero-actions">
+          <a class="primary" href="#catalog">Дивитись товари</a>
+          <a class="secondary" href="#contacts">Контакти</a>
+        </div>
+        <div class="stats">
+          <div><strong>100%</strong><span>працює на GitHub Pages</span></div>
+          <div><strong>Адаптивний</strong><span>для телефону</span></div>
+          <div><strong>Кошик</strong><span>працює в браузері</span></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=80" alt="SmartZone" />
+        <div class="hero-overlay">
+          <span>Топ пропозиції</span>
+          <h3>Смартфони, навушники, годинники, аксесуари</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="advantages" id="advantages">
+    <div class="container cards-4">
+      <div class="info-card"><h3>Швидка доставка</h3><p>Відправлення по Україні.</p></div>
+      <div class="info-card"><h3>Гарантія</h3><p>Перевірені товари та підтримка.</p></div>
+      <div class="info-card"><h3>Зручна оплата</h3><p>Картка, готівка, післяплата.</p></div>
+      <div class="info-card"><h3>Запуск без складності</h3><p>Просто завантаж файли на GitHub.</p></div>
+    </div>
+  </section>
+
+  <section class="catalog-section" id="catalog">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Каталог товарів</h2>
+          <p>Натискай “В кошик”, щоб перевірити сайт у роботі.</p>
+        </div>
+        <input id="searchInput" type="text" placeholder="Пошук товару..." />
+      </div>
+      <div class="catalog" id="catalogGrid"></div>
+    </div>
+  </section>
+
+  <section class="contacts" id="contacts">
+    <div class="container contacts-grid">
+      <div>
+        <h2>Контакти SmartZone</h2>
+        <p>Тут можна вказати свої реальні дані після запуску магазину.</p>
+      </div>
+      <div class="contact-box">
+        <p><strong>Телефон:</strong> +380 (XX) XXX-XX-XX</p>
+        <p><strong>Email:</strong> smartzone.shop.ua@gmail.com</p>
+        <p><strong>Місто:</strong> Україна</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cart-modal hidden" id="cartModal">
+    <div class="cart-panel">
+      <div class="cart-header">
+        <h3>Кошик</h3>
+        <button id="closeCartBtn">✕</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="cart-total">Разом: <strong id="cartTotal">0 ₴</strong></div>
+        <button class="primary full" id="checkoutBtn">Оформити замовлення</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="checkout-modal hidden" id="checkoutModal">
+    <div class="checkout-panel">
+      <div class="cart-header">
+        <h3>Оформлення замовлення</h3>
+        <button id="closeCheckoutBtn">✕</button>
+      </div>
+      <form id="checkoutForm" class="checkout-form">
+        <input type="text" id="name" placeholder="Ім’я та прізвище" required />
+        <input type="tel" id="phone" placeholder="Телефон" required />
+        <input type="text" id="city" placeholder="Місто" required />
+        <select id="delivery">
+          <option>Нова пошта</option>
+          <option>Укрпошта</option>
+          <option>Самовивіз</option>
+        </select>
+        <textarea id="comment" placeholder="Коментар до замовлення"></textarea>
+        <button type="submit" class="primary full">Підтвердити замовлення</button>
+      </form>
+      <p class="checkout-note">У GitHub-версії замовлення показується як демо-підтвердження без бази даних.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© 2026 SmartZone</div>
+      <div>GitHub Pages версія магазину</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
